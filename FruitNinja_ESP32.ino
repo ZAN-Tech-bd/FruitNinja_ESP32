@@ -1,8 +1,8 @@
 /*
-  ESP32 + MPU6050 Gesture-Controlled Fruit Ninja
+  ESP32 + MPU6050 Gesture-Controlled Space War
   ------------------------------------------------
   - ESP32 runs its own WiFi Access Point (no internet / no router needed)
-  - Local web server serves a full Fruit Ninja game (HTML/CSS/JS, canvas based)
+  - Local web server serves a full Space War shooter (HTML/CSS/JS, canvas based)
   - MPU6050 is read via the Adafruit MPU6050 library (same driver as the
     known-good test sketch)
   - Browser polls GET /data ~50x/sec for live tilt data to control the blade
@@ -21,11 +21,11 @@
 
   HOW TO USE:
     1. Flash this sketch.
-    2. On your phone/laptop, connect to WiFi network: "FruitNinja_ESP32"
+    2. On your phone/laptop, connect to WiFi network: "SpaceWar_ESP32"
        password: "12345678"
     3. Open a browser and go to: http://192.168.4.1
-    4. Hold the ESP32+sensor flat, tap "Calibrate", then tilt to move the
-       blade and swipe fast near fruits to slice them. Avoid the bombs!
+    4. Hold the ESP32+sensor flat, tap "Calibrate", then tilt to steer your
+       fighter. Guns fire automatically - dodge enemy fire and avoid ramming mines!
 */
 
 #include <WiFi.h>
@@ -36,7 +36,7 @@
 #include "index_html.h"   // contains the game page as INDEX_HTML (PROGMEM string)
 
 // ---------- WiFi Access Point settings ----------
-const char* AP_SSID     = "FruitNinja_ESP32";
+const char* AP_SSID     = "SpaceWar_ESP32";
 const char* AP_PASSWORD = "12345678";   // must be 8+ chars, or set to "" for open network
 
 // ---------- I2C / MPU6050 settings ----------
